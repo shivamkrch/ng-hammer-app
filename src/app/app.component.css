@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5vh 20vw;
+}
+@media screen and (max-width: 700px) {
+  main {
+    padding: 5vh 3vw;
+  }
+}

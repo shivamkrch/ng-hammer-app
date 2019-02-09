@@ -1,0 +1,39 @@
+<mat-card
+  class="example-card"
+  [@cardAnimator]="animationState"
+  (@cardAnimator.done)="resetAnimationState()"
+  (swipeleft)="startAnimation('slideOutLeft')"
+  (swiperight)="startAnimation('zoomOutRight')"
+  (swipeup)="startAnimation('rotateOutUpRight')"
+  (swipedown)="startAnimation('flipOutY')"
+>
+  <h1>Angular & HammerJS App</h1>
+  <mat-card-content>
+    <img
+      mat-card-image
+      src="https://angular.io/assets/images/logos/angular/angular.svg"
+      alt="Angular Icon"
+    />
+    <p>
+      An Angular app which uses HammerJS and animate.css to animate this card
+      based on different swipe gestures (Right, Left, Up and Down) and button
+      clicks.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (tap)="startAnimation('wobble')">WOBBLE</button>
+    <button mat-raised-button color="primary" (tap)="startAnimation('swing')">
+      SWING
+    </button>
+
+    <h5>Custom Events</h5>
+    <button
+      hammertime
+      mat-raised-button
+      color="accent"
+      (doubleTap)="startAnimation('jello')"
+    >
+      JELLO (doubleTap)
+    </button>
+  </mat-card-actions>
+</mat-card>
